@@ -1,5 +1,10 @@
-function add(a, b) {
-    return a + b;
-}
+const http = require('http');
 
-module.exports = add;
+const server = http.createServer((req, res) => {
+    res.write("Hello from GitHub Actions CI/CD!");
+    res.end();
+});
+
+server.listen(3000, () => {
+    console.log("Server running on port 3000");
+});
